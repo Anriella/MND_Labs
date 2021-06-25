@@ -21,6 +21,9 @@ def find_closest(m, table):
 
 
 def main(m):
+    if m > 20:
+        print("m > 20, so exit")
+        exit()
     var = 123
     y_max = (30 - var) * 10
     y_min = (20 - var) * 10
@@ -164,4 +167,4 @@ def main(m):
 
 
 if __name__ == '__main__':
-    main(m=5)
+    main(m=21)
