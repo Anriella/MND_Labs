@@ -1,5 +1,7 @@
 from random import randint
+import time
 
+start_time = time.time()
 
 def make_experiment():
     factor = [randint(0, 20) for _ in range(8)]
@@ -41,3 +43,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    print("--- %s seconds ---" % (time.time() - start_time))
