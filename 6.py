@@ -2,7 +2,7 @@ from random import randint
 from numpy.linalg import det
 from copy import deepcopy
 from scipy.stats import t
-
+import numpy as np
 
 def Naturalize(MatrixOfPlan, MinMaxArr, flag):
     result = []
@@ -340,6 +340,9 @@ def main(m):
         b_list.append(det(matrices[i]) / main_determinant)
     print(f'b: {b_list}')
 
+    g = np.array(b_list)
+    print(g)
+
     print('Підстановка отриманих коефіцієнтів у рівняння регресії')
     y_list = []
     for i in range(len(plan2x1)):
@@ -349,6 +352,9 @@ def main(m):
         y_list.append(y)
         print(f'y = {y}; y avg = {y_avg[i]}')
     print('-' * 100)
+
+    v = np.array(y_list)
+    print(v)
 
     dispersion = Cochran(y_arr, y_avg, m)
     print('-' * 100)
