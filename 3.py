@@ -1,7 +1,7 @@
 from random import randint
 from numpy.linalg import det
 from functools import reduce
-
+import numpy as np
 
 def Naturalize(MatrixOfPlan, MinMaxArr):
     result = []
@@ -169,6 +169,10 @@ def main(m):
     b_list = [b0, b1, b2, b3]
     print(f'y = b{indexes[0]}')
 
+    v = np.array(b_list)
+    print(v)
+
+
     b_res = [b_list[indexes[0]] for _ in range(4)]
     for i in b_res:
         print(f'y = {i}')
@@ -187,6 +191,3 @@ def main(m):
 
 if __name__ == '__main__':
     main(m=5)
-
-
-
