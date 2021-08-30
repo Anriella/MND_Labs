@@ -2,7 +2,7 @@ from random import randint
 from numpy.linalg import det
 from copy import deepcopy
 from scipy.stats import t
-
+import numpy as np
 
 def Naturalize(MatrixOfPlan, MinMaxArr, flag):
     result = []
@@ -332,6 +332,9 @@ def main(m):
         print('-' * 100)
         print(f'b: {b_list}')
 
+        g = np.array(b_list)
+        print(g)
+
         y_list = []
         for i in range(len(plan2x1)):
             y = b_list[0] + b_list[1] * plan2x1[i] + b_list[2] * plan2x2[i] + b_list[3] * plan2x3[i] +\
@@ -340,6 +343,9 @@ def main(m):
             y_list.append(y)
             print(f'y = {y}; y avg = {y_avg[i]}')
         print('-' * 100)
+
+        v = np.array(y_list)
+        print(v)
 
         t_arr, s2b = Students(plan1x0, plan1x1, plan1x2, plan1x3, y_avg, dispersion, m)
 
